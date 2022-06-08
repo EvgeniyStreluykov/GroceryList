@@ -12,11 +12,9 @@ addItem = () => {
   item.textContent = "- " + document.querySelector("#userInput").value;
 
   item.addEventListener("click", () => {
-    if (item.style.textDecoration != "line-through") {
-      item.style.textDecoration = "line-through";
-    } else {
-      item.style.textDecoration = "none";
-    }
+    item.style.textDecoration = item.style.textDecoration !== "line-through"
+        ? "line-through"
+        : "none";
   })
 
   document.querySelector("#groceryItems").appendChild(item);
